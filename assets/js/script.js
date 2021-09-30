@@ -13,6 +13,11 @@ function generateUpper() {
     return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
 }
 
+// Generate random number, starting from ASCII code 48 (0) and adding a random number between 1 and 10.
+function generateNumber() {
+    return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+}
+
 function generatePassword() {
     // PLEASE ADD ALL YOUR CODE HERE
 }
@@ -28,4 +33,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-console.log(generateUpper());
+console.log(generateNumber());
