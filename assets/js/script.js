@@ -18,6 +18,12 @@ function generateNumber() {
     return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
 }
 
+// Generate symbol, using a string of symbols and indexing a random index to select a individual random symbol
+function generateSymbols() {
+    const symbols = '!"£$%^&*(){}[]@,./<>';
+    return symbols[Math.floor(Math.random() * symbols.length)]
+}
+
 function generatePassword() {
     // PLEASE ADD ALL YOUR CODE HERE
 }
@@ -33,4 +39,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-console.log(generateNumber());
+console.log(generateSymbols());
