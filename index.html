@@ -20,6 +20,12 @@
             </div>
             <div class="card-body">
                 <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+                <div class="pass-options">
+                    <div class="option">
+                        <label>Password length:</label>
+                        <input type="number" id="length" min='8' max='128' value='20' />
+                    </div>
+                </div>
             </div>
             <div class="card-footer">
                 <button id="generate" class="btn">Generate Password</button>
