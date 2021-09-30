@@ -8,6 +8,11 @@ function generateLower() {
     return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
 }
 
+// Generate upper case letters, starting from ASCII code 65 (A) and adding a random number between 1 and 26.
+function generateUpper() {
+    return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+}
+
 function generatePassword() {
     // PLEASE ADD ALL YOUR CODE HERE
 }
@@ -23,4 +28,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-console.log(generateLower());
+console.log(generateUpper());
