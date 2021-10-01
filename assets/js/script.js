@@ -2,16 +2,16 @@
 
 /*
 
-Variable of DOM Elements
+Variable of each DOM Elements
 
 */
 
 const generateBtn = document.querySelector('#generate');
-const passwordLength = document.querySelectorAll('#length');
-const lowercaseCheck = document.querySelectorAll('#hasLowercase')
-const uppercaseCheck = document.querySelectorAll('#hasUppercase')
-const numbersCheck = document.querySelectorAll('#hasNumbers')
-const symbolsCheck = document.querySelectorAll('#hasSymbols')
+const passwordLength = document.querySelector('#length');
+const lowercaseCheck = document.querySelector('#hasLowercase')
+const uppercaseCheck = document.querySelector('#hasUppercase')
+const numbersCheck = document.querySelector('#hasNumbers')
+const symbolsCheck = document.querySelector('#hasSymbols')
 
 
 /*
@@ -20,7 +20,7 @@ Create Functions
 
 */
 
-// create lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
+// creates lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
 function generateLower() {
     return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
 }
@@ -38,9 +38,31 @@ function generateSymbols() {
     return symbols[Math.floor(Math.random() * symbols.length)]
 }
 
+/*
+
+Validation Functions
+
+*/
+
 function generatePassword() {
-    // CODE HERE
+    // 1. string to store created password
+    // 2. include checked options
+    // 3. iterate through password length
 }
+
+// Add event listener to check password options, and generate a password based on true options
+
+generateBtn.addEventListener('click', () => {
+    const length = passwordLength.value;
+    const hasLowercase = lowercaseCheck.checked;
+    const hasUpercase = uppercaseCheck.checked;
+    const hasNumbers = numbersCheck.checked;
+    const hasSymbols = symbolsCheck.checked;
+
+    generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
+
+})
+
 
 // write password to the #password input
 function writePassword() {
@@ -51,8 +73,3 @@ function writePassword() {
 
     passwordText.value = password;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
-
-console.log(generateLower());
