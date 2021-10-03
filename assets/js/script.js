@@ -2,16 +2,25 @@
 
 /*
 
-Variable of each DOM Elements
+Variables
 
 */
 
+// DOM Elements
 const generateBtn = document.querySelector('#generate');
 const passwordLength = document.querySelector('#length');
 const lowercaseCheck = document.querySelector('#hasLowercase')
 const uppercaseCheck = document.querySelector('#hasUppercase')
 const numbersCheck = document.querySelector('#hasNumbers')
 const symbolsCheck = document.querySelector('#hasSymbols')
+
+// object of functions to be called, with keys
+const functionList = {
+    lower: generateLower,
+    upper: generateUpper,
+    number: generateNumber,
+    symbol: generateSymbols
+}
 
 /*
 
