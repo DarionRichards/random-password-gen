@@ -105,6 +105,18 @@ function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymb
     }
 
     // shuffle generated password
+
+}
+
+// function to shuffle the generate password
+function shufflePassword(a) {
+
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+
 }
 
 // creates lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
