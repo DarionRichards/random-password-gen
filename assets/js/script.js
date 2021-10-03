@@ -45,11 +45,12 @@ generateBtn.addEventListener('click', () => {
     // pass checked values into generatePassword function
     generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
 
+
 })
 
 /*
 
-Create Functions
+Functions
 
 */
 
@@ -105,6 +106,14 @@ function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymb
     }
 
     // shuffle generated password
+
+    const randomPassword = pwd.split("");
+
+    shufflePassword(randomPassword);
+
+    const finalPassword = randomPassword.join("");
+
+    return finalPassword;
 
 }
 
