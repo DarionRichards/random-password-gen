@@ -53,11 +53,43 @@ Create Functions
 
 */
 
-function generatePassword() {
-    // 1. string to store created password
-    // 2. include checked options
-    // 3. iterate through password length
+function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols) {
 
+    /*
+    1. string to store created password
+
+    2. include checked options
+        a. count each checked box
+        b. get true or false values of eached checked boxes
+        c. filter out false values (not checked)
+
+    3. iterate through password length
+        a. set condition alert if no boxes are checked
+        b. loop through checked options () to create password
+        c. implement each characer into new string 
+        d. shuffle new string
+    */
+
+    // string to store generated password
+    let pwd = ''
+
+    // parameters being passed from addEventListener
+    // count how many options are checked
+    const countCheck = hasLowercase + hasUpercase + hasNumbers + hasSymbols;
+
+    // array of objects
+    // get values of each checked box
+    // filter out values === false
+    const countArray = [{ hasLowercase }, { hasUpercase }, { hasNumbers }, { hasSymbols }].filter(check => Object.values(check)[0]);
+
+    if (countCheck === 0) {
+        return alert("Make sure to include at least one character option, to generate a password!");
+    }
+
+
+    // conditional statment for no options checked
+    // loop through password length
+    //
 }
 
 // creates lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
