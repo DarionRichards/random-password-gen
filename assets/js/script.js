@@ -13,12 +13,36 @@ const uppercaseCheck = document.querySelector('#hasUppercase')
 const numbersCheck = document.querySelector('#hasNumbers')
 const symbolsCheck = document.querySelector('#hasSymbols')
 
+/*
+
+Click Event
+
+*/
+
+// Add event listener to check password options, and generate a password based on true options
+
+generateBtn.addEventListener('click', () => {
+    const length = passwordLength.value;
+    const hasLowercase = lowercaseCheck.checked;
+    const hasUpercase = uppercaseCheck.checked;
+    const hasNumbers = numbersCheck.checked;
+    const hasSymbols = symbolsCheck.checked;
+
+    generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
+
+})
 
 /*
 
 Create Functions
 
 */
+
+function generatePassword() {
+    // 1. string to store created password
+    // 2. include checked options
+    // 3. iterate through password length
+}
 
 // creates lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
 function generateLower() {
@@ -37,31 +61,6 @@ function generateSymbols() {
     const symbols = '!"£$%^&*(){}[]@,./<>';
     return symbols[Math.floor(Math.random() * symbols.length)]
 }
-
-/*
-
-Validation Functions
-
-*/
-
-function generatePassword() {
-    // 1. string to store created password
-    // 2. include checked options
-    // 3. iterate through password length
-}
-
-// Add event listener to check password options, and generate a password based on true options
-
-generateBtn.addEventListener('click', () => {
-    const length = passwordLength.value;
-    const hasLowercase = lowercaseCheck.checked;
-    const hasUpercase = uppercaseCheck.checked;
-    const hasNumbers = numbersCheck.checked;
-    const hasSymbols = symbolsCheck.checked;
-
-    generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
-
-})
 
 
 // write password to the #password input
