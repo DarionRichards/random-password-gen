@@ -103,10 +103,13 @@ function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymb
 
     // shuffle generated password
 
+    // split string into array
     const randomPassword = pwd.split("");
 
+    // pass array parameter into function
     shufflePassword(randomPassword);
 
+    // rejoin shuffled characters into string
     const finalPassword = randomPassword.join("");
 
     return finalPassword;
