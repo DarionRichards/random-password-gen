@@ -69,6 +69,16 @@ function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymb
     // filter method to filters out values === false
     const countArray = [{ hasLowercase }, { hasUpercase }, { hasNumbers }, { hasSymbols }].filter(check => Object.values(check)[0]);
 
+    // condition for length of password
+    if (length < 8) {
+        return alert("Please enter a password length which is greater than or equal to 8!");
+    }
+
+    // condition for length of password
+    if (length >= 128) {
+        return alert("Please enter a password length which is less than 128!");
+    }
+
     // conditional statement for no option checked on page
     if (countCheck === 0) {
         return alert("Make sure to include at least one character option, to generate a password!");
