@@ -16,10 +16,10 @@ const symbolsCheck = document.querySelector('#hasSymbols')
 
 // object of functions to be called, with keys
 const functionList = {
-    lower: generateLower,
-    upper: generateUpper,
-    number: generateNumber,
-    symbol: generateSymbols
+    hasLowercase: generateLower,
+    hasUpercase: generateUpper,
+    hasNumbers: generateNumber,
+    hasSymbols: generateSymbols
 }
 
 /*
@@ -79,17 +79,32 @@ function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymb
 
     // array of objects
     // get values of each checked box
-    // filter out values === false
+    // filter method to filters out values === false
     const countArray = [{ hasLowercase }, { hasUpercase }, { hasNumbers }, { hasSymbols }].filter(check => Object.values(check)[0]);
 
+    // conditional statement for no option checked on page
     if (countCheck === 0) {
         return alert("Make sure to include at least one character option, to generate a password!");
     }
 
-
-    // conditional statment for no options checked
     // loop through password length
-    //
+    for (i = 0; i < length; i += countCheck) {
+
+        // on every loop
+        // loop on through each array type (character type)
+        countArray.forEach(type => {
+
+            // variable to store each key to run funtion
+            const characterType = Object.keys(type)[0];
+            // e.g. hasLowercase
+
+            // pass key into variable list of functions, to generate character
+            // store each character into pwd string
+            pwd += functionList[characterType]();
+        });
+    }
+
+    // shuffle generated password
 }
 
 // creates lower case letters, starting from ASCII code 97 (a) and adding a random number between 1 and 26.
@@ -108,15 +123,4 @@ function generateNumber() {
 function generateSymbols() {
     const symbols = '!"£$%^&*(){}[]@,./<>';
     return symbols[Math.floor(Math.random() * symbols.length)]
-}
-
-
-// write password to the #password input
-function writePassword() {
-
-    // store generated password
-    var password = generatePassword();
-    var passwordText = document.querySelector('#password');
-
-    passwordText.value = password;
 }
