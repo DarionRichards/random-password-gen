@@ -8,6 +8,7 @@ Variables
 
 // DOM Elements
 const generateBtn = document.querySelector('#generate');
+const passwordText = document.querySelector('#password');
 const passwordLength = document.querySelector('#length');
 const lowercaseCheck = document.querySelector('#hasLowercase')
 const uppercaseCheck = document.querySelector('#hasUppercase')
@@ -43,8 +44,8 @@ generateBtn.addEventListener('click', () => {
 
     // parameters to be passed
     // pass checked values into generatePassword function
-    generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
-
+    // pass generatedPassword() into the password DOM Element
+    passwordText.value = generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols);
 
 })
 
@@ -55,21 +56,6 @@ Functions
 */
 
 function generatePassword(length, hasLowercase, hasUpercase, hasNumbers, hasSymbols) {
-
-    /*
-    1. string to store created password
-
-    2. include checked options
-        a. count each checked box
-        b. get true or false values of eached checked boxes
-        c. filter out false values (not checked)
-
-    3. iterate through password length
-        a. set condition alert if no boxes are checked
-        b. loop through checked options () to create password
-        c. implement each characer into new string 
-        d. shuffle new string
-    */
 
     // string to store generated password
     let pwd = ''
